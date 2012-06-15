@@ -1,7 +1,12 @@
 var $ = {}, _ = {}, etc = {};
 
+function MatchError(){
+  return Error.apply(this, arguments);
+}
+MatchError.prototype = new Error();
+
 function matches(value, pattern){
-  var result = {vars: []};
+  var result = {vars: [], matched: false};
   if (pattern === _)
   {
     result.matched = true;
@@ -91,29 +96,14 @@ function match(/*pattern1, pattern2, ...*/){
         return pattern[1];
       }
     }
-    throw new Error('unable to match ' + object + ' against ' + patterns);
+    throw new MatchError('unable to match ' + object + ' against ' + patterns);
   };
 }
 
-
-// var fac = match(
-//   [0, 1],
-//   [$, function(n){return n * fac(n - 1);}]
-// );
-// console.log(fac(3));
-
-// var boolenize = match(
-//   [0, false],
-//   [_, true]
-// );
-// console.log(boolenize(4), boolenize(0));
-
-// var arrayF = match(
-//   [ [_, $, 2, etc], function(n){return n;}]
-// );
-// console.log(arrayF([0, 1, 2, 3 ,4 ,5]));
-
-// var regexF = match(
-//   [/123(.+)/, function(m){ return m[1]; }]
-// );
-// console.log(regexF("123456"));
+module.exports = {
+  match: match,
+  $: $,
+  _: _,
+  etc: etc,
+  MatchError: MatchError
+};
