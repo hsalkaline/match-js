@@ -1,0 +1,23 @@
+{
+  "author": "hsalkaline <hsalkaline@gmail.com>",
+  "name": "match-js",
+  "description": "Match-js is a javascript pattern-matching mini-framework",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hsalkaline/match-js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hsalkaline/match-js.git"
+  },
+  "main" : "match.js",
+  "scripts": {
+    "test": "jasmine-node . --verbose"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-node": "~1.0.26"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
