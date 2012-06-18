@@ -5,6 +5,6 @@ Match-js is a javascript pattern matching mini-framework.
 
 Match-js provides matching with primitive types, RegExp's and objects. It also supports special pattern syntax for arrays and matching with predicates.
 
-For usage examples look into examples and tests directories.
+For usage examples look into examples and tests directories. 
 
 
